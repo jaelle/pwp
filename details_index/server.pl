@@ -3,7 +3,6 @@
 :-use_module(library(http/http_pwp)).
 :-use_module(library(http/http_parameters)).
 
-:- ensure_loaded(debug).
 :- ensure_loaded(details).
 
 user:file_search_path(pwp,'pwp').
