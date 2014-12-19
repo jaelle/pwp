@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html
+  xmlns:pwp="http://www.cs.otago.ac.nz/staffpriv/ok/pwp.pl">
+  <head>
+	<title>Details Index</title>
+  </head>
+  <body>
+  	<p pwp:ask = "\+request(QUERY,Id)">
+		<ul pwp:ask="details(Id,Title,Details)">
+			<li><a pwp:att="$" href="index.pwp?id=$(Id)$" pwp:use="Title" /></li>
+		</ul>
+	</p>
+	<p pwp:ask = "request(QUERY,Id),details(Id,Title,Details)">
+		<h1 pwp:use="Title" />
+		<p pwp:use="Details" />
+	</p>
+  </body>
+</html>
