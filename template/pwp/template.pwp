@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html
+  xmlns:pwp="http://www.cs.otago.ac.nz/staffpriv/ok/pwp.pl" pwp:ask="ensure_loaded(views)">
+  <head>
+	<title>Template</title>
+  </head>
+  <body>
+  	<div pwp:ask="display_nav(Nav)" pwp:use="Nav" pwp:how="xml" id="navigation" />
+  	<div pwp:ask="display_view(SCRIPT_NAME,View)" pwp:use="View" pwp:how="xml" id="container" />
+  </body>
+</html>

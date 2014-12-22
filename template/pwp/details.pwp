@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html
+  xmlns:pwp="http://www.cs.otago.ac.nz/staffpriv/ok/pwp.pl"
+  pwp:ask = "request(QUERY,Id),details(Id,Title,Details)">
+  <head>
+	<title>Details</title>
+  </head>
+  <body>
+  	<h1 pwp:use="Title" />
+  	<p pwp:use="Details" />
+  </body>
+</html>
