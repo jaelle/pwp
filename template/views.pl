@@ -1,5 +1,3 @@
-:-ensure_loaded(debug).
-
 view('/',"pwp/home.pwp").
 view('/about',"pwp/about.pwp").
 
@@ -7,7 +5,7 @@ nav("pwp/nav.pwp").
 
 display_nav(Nav):-
 	nav(NavTemplate),
-	??load_view(NavTemplate,Nav).
+	load_view(NavTemplate,Nav).
 
 display_view(ScriptName,View):-
 	
