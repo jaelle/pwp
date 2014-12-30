@@ -4,7 +4,7 @@
 
 
 user:file_search_path(pwp,'pwp').
-:- http_handler(/, default_handler, [prefix]).
+:- http_handler(/, default_handler, []).
 
 server(Port):-
 
@@ -13,5 +13,4 @@ server(Port):-
 	
 default_handler(Request):-
 
-	% Handle PWP
-	pwp_handler([path_alias(pwp)],Request).
+	reply_pwp_page('pwp/index.pwp',[pwp_module(true)],Request).

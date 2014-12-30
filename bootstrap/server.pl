@@ -15,8 +15,15 @@ server(Port):-
 
 	% start server on specified Port
 	http_server(http_dispatch, [port(Port)]).
-	
+
+
 default_handler(Request):-
 
 	% Handle PWP
-	pwp_handler([path_alias(pwp)],Request).
+	reply_pwp_page('pwp/index.pwp',[pwp_module(true)],Request).
+
+
+default_handler(Request):-
+
+	% file is not PWP
+	http_handler(root(.),Request,[]).
