@@ -20,7 +20,7 @@ server(Port):-
 default_handler(Request):-
 
 	% Handle PWP
-	reply_pwp_page('pwp/index.pwp',[pwp_module(true)],Request).
+	pwp_handler([path_alias(pwp),pwp_module(true)],Request).
 
 
 default_handler(Request):-
