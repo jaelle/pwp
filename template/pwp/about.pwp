@@ -1,1 +1,13 @@
 <h1>About</h1>
+		<div pwp:ask="collapsible_group(ID,Title,Description)" class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+		  <div class="panel panel-default">
+			<div pwp:att="$" class="panel-heading" role="tab" id="heading$(ID)$">
+			  <h4 class="panel-title">
+				<a pwp:att="$" pwp:use="Title" data-toggle="collapse" data-parent="#accordion" href="#collapse$(ID)$" aria-expanded="true" aria-controls="collapse$(ID)$" />
+			  </h4>
+			</div>
+			<div pwp:att="$" id="collapse$(ID)$" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading$(ID)$">
+			  <div pwp:use="Description" class="panel-body" />
+			</div>
+		  </div>
+		</div>
