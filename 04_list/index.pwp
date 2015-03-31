@@ -1,0 +1,37 @@
+<html pwp:ask="ensure_loaded(debug),ensure_loaded(list)">
+<head>
+<title>Lists</title>
+</head>
+
+<body>
+
+<ul>
+	<li pwp:ask="bagof(Description-Link,
+					menu(_,Description,Link),
+					Items),length(Items,SubMenuSize),sort(Items,MenuItems)">
+		<a pwp:ask="SubMenuSize==1,member(Title-Href,MenuItems)" pwp:att="$" href="$(Href)$" pwp:use="Title" />
+		<a pwp:ask="SubMenuSize>1,member(Title-Href,MenuItems),!." pwp:att="$" href="#" pwp:use="Title" />
+		<ul pwp:ask="SubMenuSize>1">
+			<li pwp:ask="member(Title-Href,MenuItems)"><a pwp:att="$" href="$(Href)$" pwp:use="Title" /></li>
+		</ul>
+	</li>
+</ul>
+
+<h3>Favorite Things</h3>
+<ul>
+	<li pwp:ask="favorite_thing(_,Description)" pwp:use="Description">
+</ul>
+
+<h3>Favorite Things by Verse</h3>
+<div pwp:ask="bagof(FavoriteThing,
+			 		favorite_thing(Verse,FavoriteThing),
+		 			FavoriteThings)">
+	<b>Verse <span pwp:use="Verse" /></b><br />
+		<ul >
+			<li pwp:ask="member(Favorite,FavoriteThings)" pwp:use="Favorite" />
+		</ul>
+	</li>
+</div>
+
+</body>
+</html>
