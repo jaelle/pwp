@@ -5,11 +5,11 @@
 
 % setup a handler to tell prolog what to do when the user visits asset folders
 
-user:file_search_path('assets','/css').
-user:file_search_path('assets','/js').
-user:file_search_path('assets','/images').
+user:file_search_path(root,'.').
 
-:- http_handler(assets(.), assets_handler, [prefix, priority(1)]).
+:- http_handler('/js', assets_handler, [prefix, priority(1)]).
+:- http_handler('/css', assets_handler, [prefix, priority(1)]).
+:- http_handler('/images', assets_handler, [prefix, priority(1)]).
 
 % setup a handler to tell what prolog to do when the user visits anything under /
 :- http_handler(/, default_handler, []).
@@ -23,8 +23,8 @@ server(Port):-
 assets_handler(Request):-
 
 	% file is not PWP
-	??memberchk(path(Path),Request),
-	http_reply_file(assets(Path),[cache(true),unsafe(false)],Request).
+	memberchk(path(Path),Request),
+	http_reply_file(root(Path),[],Request).
 
 % Used by http_handler to determine what to do when handling the HTTP request
 default_handler(Request):-

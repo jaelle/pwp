@@ -1,9 +1,9 @@
 body 
 {
-	background:#81caa8;
-}
-#container
-{
-	background:#FFF;
+	background:#FFFFFF;
 	text-align:center;
+}
+#hello
+{
+	width:300px;
 }

@@ -6,7 +6,7 @@
 </head>
 <body>
 	<div id="container">
-		<img src="images/hello_world.jpg" />
+		<img id="hello" src="images/hello_world.jpg" />
 	</div>
 </body>
 </html>
