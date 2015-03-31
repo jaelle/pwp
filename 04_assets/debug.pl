@@ -1,3 +1,6 @@
+:-op(920, fy, ?).
+:-op(920, fy, ??).
+
 ??(Goal):-
         setup_call_catcher_cleanup(format(user_error, 'CALL ~q~n', [Goal]),
                                    Goal,
@@ -37,3 +40,8 @@
             true
         ).
         
+debug_empty_db(Connection):-
+	odbc_query(Connection,'DELETE FROM records'),
+	odbc_query(Connection,'DELETE FROM html'),
+	odbc_query(Connection,'DELETE FROM images'),
+	odbc_query(Connection,'DELETE FROM paths').	

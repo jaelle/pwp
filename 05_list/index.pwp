@@ -1,4 +1,4 @@
-<html pwp:ask="ensure_loaded(debug),ensure_loaded(list)">
+<html pwp:ask="ensure_loaded(list)">
 <head>
 <title>Lists</title>
 </head>
@@ -9,7 +9,7 @@
 	<li pwp:ask="bagof(Description-Link,
 					menu(_,Description,Link),
 					Items),length(Items,SubMenuSize),sort(Items,MenuItems)">
-		<a pwp:ask="SubMenuSize==1,member(Title-Href,MenuItems)" pwp:att="$" href="$(Href)$" pwp:use="Title" />
+		<a pwp:ask="SubMenuSize=1,member(Title-Href,MenuItems)" pwp:att="$" href="$(Href)$" pwp:use="Title" />
 		<a pwp:ask="SubMenuSize>1,member(Title-Href,MenuItems),!." pwp:att="$" href="#" pwp:use="Title" />
 		<ul pwp:ask="SubMenuSize>1">
 			<li pwp:ask="member(Title-Href,MenuItems)"><a pwp:att="$" href="$(Href)$" pwp:use="Title" /></li>
